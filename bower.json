@@ -1,0 +1,25 @@
+{
+  "name": "projeto",
+  "description": "Projeto final",
+  "main": "gulpfile.js",
+  "authors": [
+    "Diego Morales Navarro"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "bootstrap"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./src/components",
+    "test",
+    "tests"
+  ],
+   "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6",
+    "components-font-awesome": "^4.7.0"
+  }
+}

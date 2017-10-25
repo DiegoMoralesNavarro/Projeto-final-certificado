@@ -1,0 +1,122 @@
+body{ background-color: #fafafa; }
+
+
+.sidebar{
+	max-width: 180px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: -80%;
+	transition: 1.8s;
+	z-index: 10;
+	background-color: $barra-lateral;
+
+	@include media-breakpoint-up('lg') {
+		left: 0;
+	}
+
+	.sidebar-header{
+		background-color: $fundo-da-logo;
+		display: flex;
+		justify-content: center;
+		padding: 0.5rem 0;
+		height: 80px;
+		
+	}
+
+	.nav{
+		flex-direction: column; 
+
+		.nav-item{
+			border-bottom: 1px solid $fundo-da-logo;
+			margin-bottom: 1px;
+			position: relative;
+		
+			&:hover:after {
+				content: '';
+				position: absolute;
+				left: 93px;
+				top: 50%;
+				width: 0;
+				height: 0;
+				border-top: 8px solid transparent;
+				border-left: 8px solid transparent;
+				border-bottom: 8px solid transparent;
+				border-right: 8px solid $hover-texto;
+			}
+		  
+
+			.badge{
+			    background-color: red;
+			    top: 15px;
+			    left: -14px;
+			    position: relative;
+			    font-size: 1rem;
+			}
+
+			&.dashboard{
+				border-left: 4px solid $borda-dashboard;
+			}
+
+			&.messages{
+				border-left: 4px solid $borda-messages;
+			}
+
+			&.analytics{
+				border-left: 4px solid $borda-analytics;
+			}
+
+			&.settings{
+				border-left: 4px solid $borda-settings;
+			}
+		}
+
+		.nav-link{
+			color: $texto-messages;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 1.5rem 1rem;
+			font-size: 1.0rem;
+
+
+			.fa{
+				font-size: 2.5rem;
+			}
+
+
+			&:hover{
+				color: #fff;
+				background-color: $hover-background;
+			}
+
+		}
+	}
+}
+
+.open-sidebar {
+	&:after{
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 8; 
+	
+	}
+	
+	.sidebar{
+	left: 0;
+	transition: 1s;
+	}
+}
+
+@include media-breakpoint-up('lg') {
+	.open-sidebar {
+		&:after{
+		content: none;
+		}
+	}
+}
